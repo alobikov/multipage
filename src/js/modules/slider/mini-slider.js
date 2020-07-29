@@ -6,10 +6,9 @@ export default class MiniSlider extends Slider {
     console.log("Constructor of MiniSlider here!");
   }
   decorateSlide() {
-    console.log("decoreteSlide:", this.container);
     // first remove active class from all slides
     this.slides.forEach((slide) => {
-      console.log("slide in decorize:", slide);
+      //   console.log("slide in decorize:", slide);
       slide.classList.remove(this.activeClass);
       if (this.animate) {
         slide.querySelector(".card__title").style.opacity = 0.4;
@@ -31,7 +30,7 @@ export default class MiniSlider extends Slider {
   }
   nextSlide() {
     this.container.appendChild(this.slides[0]);
-    console.log("moving slide", this.slides);
+    // console.log("moving slide", this.slides);
     this.slides = this.container.querySelectorAll(this.slideSelector);
     this.decorateSlide();
   }
@@ -44,8 +43,8 @@ export default class MiniSlider extends Slider {
                                     align-items : flex-start;`;
 
     // now let's arrange slides rotation onclick
-    this.next.addEventListener("click", () => this.nextSlide());
-    this.prev.addEventListener("click", (e) => {
+    this.next[0].addEventListener("click", () => this.nextSlide());
+    this.prev[0].addEventListener("click", (e) => {
       e.preventDefault();
       let active = this.slides[this.slides.length - 1];
       this.container.insertBefore(active, this.slides[0]);

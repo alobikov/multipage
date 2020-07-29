@@ -21,7 +21,7 @@ export default class MainSlider extends Slider {
     if (n < 1) {
       this.currentIndex = this.slides.length;
     }
-    if (n > this.slides.length - 1) {
+    if (n > this.slides.length) {
       this.currentIndex = 1;
     }
     // hide all slides

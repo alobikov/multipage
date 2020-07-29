@@ -5,7 +5,7 @@ export default class Difference {
     this.cards = this.containerSl.querySelectorAll(cardsSl);
     this.lastCard = this.cards[this.cards.length - 1];
     this.currentIdx = 0;
-    console.log("cards", this.cards);
+    // console.log("cards", this.cards);
   }
   hideCards(cards) {
     cards.forEach((card) => {
